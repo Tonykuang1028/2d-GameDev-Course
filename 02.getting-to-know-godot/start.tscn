@@ -1,8 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://dfrp0km2xjcr6"]
+[gd_scene load_steps=8 format=3 uid="uid://dfrp0km2xjcr6"]
 
 [ext_resource type="Script" path="res://game.gd" id="2"]
 [ext_resource type="TileSet" uid="uid://crkgfdw1y80hc" path="res://levels/rooms/tileset_bridges.tres" id="2_vnf5n"]
 [ext_resource type="TileSet" uid="uid://cqb2wtrubw0n6" path="res://levels/rooms/tileset_invisible_walls.tres" id="3"]
+[ext_resource type="PackedScene" uid="uid://dds7yrrx56gcy" path="res://player/player.tscn" id="4_yr31t"]
+[ext_resource type="PackedScene" uid="uid://cu2rb5dl4ljte" path="res://levels/rooms/room_a.tscn" id="5_jd0jh"]
+[ext_resource type="PackedScene" uid="uid://dgayuh42w4v6u" path="res://levels/rooms/room_b.tscn" id="6_fooyc"]
+[ext_resource type="PackedScene" uid="uid://cq0mmphkbrvmm" path="res://levels/rooms/room_c.tscn" id="7_ct28x"]
 
 [node name="Start" type="Node2D"]
 script = ExtResource("2")
@@ -11,10 +15,24 @@ script = ExtResource("2")
 tile_set = ExtResource("2_vnf5n")
 format = 2
 layer_0/name = "Bridges"
+layer_0/tile_data = PackedInt32Array(4, 65536, 1, 5, 131072, 1, -327667, 262144, 1, -393203, 65536, 0, -393202, 0, 1, -393200, 131072, 1, -393201, 0, 1, -327663, 65536, 1, -327662, 0, 0, -262126, 196608, 1, -393199, 262144, 1, -196590, 196608, 1, -131054, 196608, 1, -65518, 196608, 1, 18, 196608, 1, 65554, 196608, 1, 131090, 196608, 1, 196626, 196608, 1, 262162, 196608, 0, 262161, 0, 1, 262160, 0, 1, 262159, 65536, 0, 327695, 196608, 1, 393231, 196608, 1, 458767, 196608, 1, 524303, 196608, 1, 589839, 196608, 1, 655375, 131072, 0, 655376, 0, 0, 720912, 196608, 1, 786448, 196608, 1, 851984, 196608, 1, 917520, 196608, 1, 983056, 196608, 1, 1048592, 196608, 1, 1114128, 196608, 0, 1114127, 0, 1, 1114126, 0, 1, 1114125, 131072, 0, 1048589, 327680, 1)
 metadata/_edit_lock_ = true
 
 [node name="InvisibleWalls" type="TileMap" parent="."]
 tile_set = ExtResource("3")
 format = 2
 layer_0/name = "Invisible walls"
+layer_0/tile_data = PackedInt32Array(-262125, 0, 0, -196589, 0, 0, -131053, 0, 0, -65517, 0, 0, 19, 0, 0, 65555, 0, 0, 131091, 0, 0, 196627, 0, 0, 262163, 0, 0, 327699, 0, 0, 327698, 0, 0, 327697, 0, 0, 327696, 0, 0, 393232, 0, 0, 458768, 0, 0, 524304, 0, 0, 589840, 0, 0, 589841, 0, 0, 655377, 0, 0, 720913, 0, 0, 786449, 0, 0, 851985, 0, 0, 917521, 0, 0, 983057, 0, 0, 1048593, 0, 0, 1114129, 0, 0, 1179665, 0, 0, 1179664, 0, 0, 1179663, 0, 0, 1179662, 0, 0, 1179661, 0, 0, 1114124, 0, 0, 1179660, 0, 0)
 metadata/_edit_lock_ = true
+
+[node name="Player" parent="." instance=ExtResource("4_yr31t")]
+position = Vector2(-8, -19)
+
+[node name="RoomA" parent="." instance=ExtResource("5_jd0jh")]
+position = Vector2(-896, -512)
+
+[node name="RoomB" parent="." instance=ExtResource("6_fooyc")]
+position = Vector2(768, -512)
+
+[node name="RoomC" parent="." instance=ExtResource("7_ct28x")]
+position = Vector2(512, 640)
